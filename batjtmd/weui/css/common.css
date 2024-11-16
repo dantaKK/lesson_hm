@@ -1,0 +1,93 @@
+/*
+ * @author xck
+ * @data 2024-11-29
+*/
+
+
+
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 通用功能 */
+ /* css 层叠样式表 
+    规则 选择器{
+    属性： 属性值
+    }
+ */
+ /* 在 CSS 选择器中，逗号 , 用于组合多个选择器，使它们共享同一组样式规则。这种方式可以减少重复代码，使样式表更加简洁和易于维护。 */
+body,html{
+   height: 100%;
+   
+}
+.page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ededed;
+    overflow-y: auto;
+}
+.page__hd{
+    padding: 40px;
+}
+.page__title{
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.page__desc{
+    margin-top: 4px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+    text-align: left;
+}
+
+
+/* 在 CSS 选择器中，空格用于表示后代选择器。后代选择器用于选择作为另一个元素后代的元素。这意味着，如果两个选择器之间有一个空格，那么第二个选择器匹配的元素必须是第一个选择器匹配的元素的后代。 */
+/* body html{
+   
+} */
