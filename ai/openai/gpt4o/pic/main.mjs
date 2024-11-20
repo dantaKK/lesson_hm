@@ -1,8 +1,9 @@
 import OpenAI from "openai";
-
+import dotenv from 'dotenv'
 // 实例化 openai 客户端
+dotenv.config();
 const client =new OpenAI({
-    apiKey:'sk-nwDEG8UhIM78Da5xcPLwsRv0vj83yCVviIxegcYLHlqGFkAe',
+    apiKey:process.env.OPENAI_API_KEY,
     baseURL:'https://api.302.ai/v1' // 转发
 })
 
