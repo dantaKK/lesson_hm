@@ -9,3 +9,6 @@ let person2=new Person();
 console.log(person1===person2);
 console.log(person1.name,person1.hometown);
 console.log(person2.name,person2.hometown);
+
+// 为什么可以调用原型上的方法？
+console.log(wu.__proto__==cc);
