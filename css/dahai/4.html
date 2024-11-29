@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 顺序 从.container开始第三个标签*/
+    .container :nth-child(3){
+       background-color: aqua;
+       color: black;
+    }
+    /* 为第三个孩子且还是p 标签 */
+    .container p:nth-child(3){
+       background-color: aqua;
+       color: black;
+    }
+    /* of-type 第三个类型为p的孩子 */
+    .container p:nth-of-type(3){
+       background-color: blue;
+       color: black;
+    }
+</style>
+<body>
+      <div class="container">
+     <h1>
+        nth-child vs nth -of-type 例子
+     </h1>
+     <p>这是一个段落</p>
+     <div>这是一个div</div>
+     <p>这是第二个段落</p>
+     <p>这是第三个段落</p>
+     <div>这是第二个div</div>
+     </h1>
+       </div>
+</body>
+</html>
