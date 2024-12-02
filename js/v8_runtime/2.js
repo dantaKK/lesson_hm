@@ -3,7 +3,7 @@ function foo(){
     var a=1;
     let b=2;
     {
-        let b=3;
+        // let b=3;
         var c=4;// 不支持块级作用域
         let d=5;
         console.log(a);

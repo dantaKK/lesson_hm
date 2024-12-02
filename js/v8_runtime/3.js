@@ -1,11 +1,9 @@
-// function bar(){
-//     console.log(myname);
-// }
+function bar(){
+    console.log(myname);
+}
 function foo(){
-    var myname="x";
-    function bar(){
-        console.log(myname);
-    }
+    var myname="kk";
+   
     bar();
     console.log(myname);
 }

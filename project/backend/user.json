@@ -1,0 +1,22 @@
+{
+    "users":[
+   
+        {
+            "id":1,
+            "name":"gyx",
+             "hometown":"jx"
+        } ,
+        {
+
+            "id":2,
+            "name":"pw",
+             "hometown":"yc"
+        },
+        {
+            "id":3,
+            "name":"xc",
+             "hometown":"yc"
+        }
+
+    ]
+}
