@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+   <button id="btn2">停止</button>
+      <script>
+        const timeout=(setTimeout(function(){
+            console.log('hello world');
+         },10000))
+        // 不卡住这个，不能响应其他事件和交互  js 单线程语言 
+        // 异步
+        // 即使是0 也是有1-5ms的延迟
+         // setTimeout(function(){
+         //    console.log('hello world');
+         // },1000);
+      
+         // 同步代码
+         // while(true){
+           
+         // }
+         console.log(123)
+         // setTimeout(function(){
+         //    console.log('hello world');
+         // },0);
+         // console.log(123)
+
+         const btn2 =document.getElementById('btn2');
+         btn2.addEventListener('click',function(){
+            clearTimeout(timeout);
+         })
+      </script>
+</body>
+</html>

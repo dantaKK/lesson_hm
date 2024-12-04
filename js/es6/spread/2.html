@@ -20,13 +20,14 @@
   <script>
   const nodeList = document.getElementsByTagName('p');
   const nodeArr = document.querySelectorAll('p');
-  // console.log(nodeList, nodeArr);
-  // nodeArr.forEach(node => {
-  //   console.log(node.__proto__.constructor);
-  // })
-  nodeList.join(',') // 报错 
-  
-  
+ 
+
+  const paragraphs = document.querySelectorAll('p');
+const paragraphsArray = [...paragraphs];
+paragraphsArray.join(",")
+   console.log(paragraphsArray)
+console.log(Array.isArray(paragraphsArray)); // true
+
   </script>
 </body>
 </html>
