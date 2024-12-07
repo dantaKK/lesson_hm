@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="unDebounceInput">用户搜索</label>
+        
+        <input type="text"
+        id="unDebounceInput"
+        placeholder="请输入要搜索用户的名字"
+        >
+    </div>
+    <div>
+        <ul id="users">
+             </ul>
+    </div>
+    <script>
+        const oUl=document.querySelector("#users")
+        // 通往后端接口
+        const oInput=document.getElementById("unDebounceInput")
+        
+        oInput.addEventListener("keyup",function(){
+            // console.log("用户输入的内容",this.value) // 当作为事件的处理函数来使用：中的this指向事件发生的对象
+           let value=this.value.trim();  // 去除前后空格
+           if(value===""){
+            oUl.innerHTML="";
+            return;
+           }
+            fetch("http://localhost:3001/users")
+         .then(res=>res.json())// 二进制 转 JSON
+         .then(users=>{
+            // 箭头函数的优雅 + filter 的新功能
+           const filterUsers=users.filter(
+            user=> user.name.includes(value)
+            )
+        // Array 在ES6 中新增的方法
+        oUl.innerHTML= filterUsers.map(user=>      
+        `<li> ${user.name}</li>`).join("")
+    
+
+           
+        })
+    })
+    
+    </script>
+</body>
+</html>

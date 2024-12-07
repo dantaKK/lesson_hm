@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器</title>
+</head>
+<body>
+   <button id="btn">停止</button>
+      <script>
+        const btn=document.getElementById('btn')
+        btn.addEventListener('click',function(){
+            clearInterval(timeout)
+        })
+        const timeout=(setInterval(function(){
+            console.log('hello world');
+         },1000))
+         console.log(timeout)
+      </script>
+</body>
+</html>

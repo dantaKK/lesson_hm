@@ -8,14 +8,15 @@
 <body>
     <button id="btn">关闭定时器</button>
     <script>
+        const interval=setInterval(function(){
+        console.log('hello world');
+    },1000)
+    console.log(interval)
     const btn=document.getElementById('btn');
     btn.onclick=function(){
         clearInterval(interval);
     }
-   const interval=setInterval(function(){
-        console.log('hello world');
-    },1000)
-    console.log(123)
+  
     </script>
 </body>
 </html>

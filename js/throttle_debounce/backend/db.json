@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Rohit"
+    },
+    {
+      "id": "2",
+      "name": "xkk"
+    },
+    {
+      "id": "3",
+      "name": "lucky"
+    }
+  ],
+  "posts": [
+    { 
+      "id": "1",
+      "title": "666",
+      "content": "Post One Content",
+      "userId": 1
+    }
+  ]
+}
