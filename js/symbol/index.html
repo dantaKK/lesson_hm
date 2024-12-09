@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbol</title>
+</head>
+<body>
+    <!--  为什么要有symbol 呢？ 放心加进去，绝对不会重复 -->
+      <script>
+    const wes= Symbol('wes')
+    let name ="xbk"
+
+    <!--  教室 对象字面量 -->
+    const classmates={
+        // 字符串 同名 覆盖 
+        "cy":1,
+        "cy":2,
+        [name]:"猛男",
+        // symbol 可以代替 字符串作为key
+        [Symbol('Mark')]:{grade:50,age:10},
+        [Symbol('olivia')]:{ grade:60,age:18},
+        [Symbol('olivia')]:{ grade:60,age:18}
+    }
+    console.log(classmates)
+    console.log([name],classmates.cy)
+    // Object.keys(classmates)
+    // Object.values(classmates)
+    // Object.entries(classmates)
+    
+    // 二维数组
+    for(let[key,val] of Object.entries(classmates)){
+        console.log(key,val)
+    }
+    // 对象自面量循环
+    for(const person in classmates){
+        console.log(person,classmates[person])
+    }
+
+    const syms=Object.getOwnPropertySymbols(classmates) 
+    console.log(syms)
+    const data=syms.map(sym=>classmates[sym])
+    console.log(data)
+    // 属性描述符 
+    console.log(Object.getOwnPropertyDescriptors(classmates))
+    </script>
+</body>
+</html>
