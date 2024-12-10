@@ -42,3 +42,21 @@
   下载任务 
   - 进程间的通信 IPC
   ![alt text](image-1.png)
+
+- chrome 多进程有哪些？
+  - 浏览器主进程
+     负责界面显示、用户交互（事件冒泡、捕获机制）、子进程管理（IPC）、存储
+     功能（cookie、localStroage、indexDB） 安全
+  - 渲染进程
+     排版Webkit/Blink + v8 引擎（JS 单线程） 在这个进程
+     A 页面打开的情况下 B页面也不受A影响  A||B 崩溃 
+     每个tab 都是一个渲染进程，运行在沙箱之中操作系统等
+     比如 GPS 功能、 摄像头 等 提醒授权
+  - 插件进程
+    flash、chrome extensions 安全 
+  - GPU 绘制 transform: translate3d(50%,50%,50%)
+    显卡 显存 都习惯使用 GPU 来加速
+
+  - 从输入URL 到页面显示？
+    - 浏览器要打开 启动了4个进程 （多进程架构） 
+    -  

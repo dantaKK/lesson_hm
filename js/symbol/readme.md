@@ -15,7 +15,7 @@
 
 - 可迭代对象
   Object.getOwnPropertyDescriptors(classmates) 对象上的属性描述符
-  - 虽然 symbols emumberable 属性为true，但仍不可枚举
+  - 虽然 symbols emumberable 属性为true， 但仍不可枚举
     因为Symbols 独特设计，就是提供唯一值的， 只能通过 getOwnPropertyDescriptors 来获取
 
 - ownProperty?

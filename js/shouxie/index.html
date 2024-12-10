@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a={
+            name:"zhangsan",
+            // call apply 有区别  立即执行
+            // call 一个个给 call(thisBinder,a,b,c,....)
+            // apply 一次性，以数组的形式  apply(thisBinder,[a,b,c,....],[a,b,c,....])
+            fn:function(a,b){
+                console.log(this.name);
+                console.log(a+b);
+            }
+        }
+
+        // a.fn(1,2)
+        var b=a.fn;// 普通函数
+        // 指定this
+        // 立即执行
+        // 参数
+        console.log(b.apply(a,[1,2]));
+       console.log( b.call(a,1,2));
+       console.log( b.call(a,[1,2]));
+       // a:[1,2]  b undefined
+       // + 两边都是数字就是加法，如果不是呢？ 连接运算符
+       // a.tosring(): a,b + b: undefined
+       // a 的原型对象有tostring方法  所以  a+b  相当于 a.tostring()+string(b)
+       // b 是一个简单数据类型没有tostring方法，包装函数 String()
+
+       console.log( b.bind(a,1,2)() ) // 返回新的函数，但是不立即执行， 酷似call() 
+    </script>
+</body>
+</html>
