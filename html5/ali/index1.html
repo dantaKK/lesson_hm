@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>阿里双11</title>
+  <title></title>
   <script>
     // 阻塞 来动态设置 html 的 font-size
     // 立即执行函数
@@ -14,6 +14,7 @@
       console.log(w);
       document.documentElement.style.fontSize 
         = 75*(w / 750) + 'px';
+        console.log( document.documentElement.style.fontSize );
     } 
     calc()
     // 竖屏 横屏  屏幕大小发生变化
@@ -34,12 +35,7 @@
 </head>
 <body>
     <div>
-  <div style="width: 10rem; height: 2rem;background-color: red;"></div>
-    <div style="font-size: 0;">
-   <!-- 要首尾相连 -->
-  <div style="width: 5rem; height: 2rem;background-color: green;display:inline-block; font-size: 40px;color: aqua;" >111</div>
-  <div style="width: 5rem; height: 2rem;background-color: blue;display:inline-block;">222</div>
-   </div>
+  <div style="width: 5rem; height: 2rem;background-color: green;display:inline-block;" ></div><div style="width: 5rem; height: 2rem;background-color: blue;display:inline-block;"></div>
 </div>
 </body>
 </html>
