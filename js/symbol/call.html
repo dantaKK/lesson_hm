@@ -25,10 +25,12 @@ var obj = {
   func4: function() {
     setTimeout(function() {
       this.func1()
-    }.bind(obj), 1000000) // 立即执行
+    }.bind(obj), 1000) 
   }
 }
+obj.func2()
 obj.func3()
+obj.func4()
 </script>
 </body>
 </html>

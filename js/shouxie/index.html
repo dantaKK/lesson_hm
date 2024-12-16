@@ -32,7 +32,7 @@
        // a 的原型对象有tostring方法  所以  a+b  相当于 a.tostring()+string(b)
        // b 是一个简单数据类型没有tostring方法，包装函数 String()
 
-       console.log( b.bind(a,1,2)() ) // 返回新的函数，但是不立即执行， 酷似call() 
+       console.log( b.bind(a,1,2) ) // 返回新的函数，但是不立即执行， 酷似call() 
     </script>
 </body>
 </html>

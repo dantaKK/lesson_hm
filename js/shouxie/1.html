@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a={
+            name:"zhangsan",
+            fn:function(a,b){
+                console.log(this.name);
+                console.log(a+b);
+            }
+        }
+        var b=a.fn;// 普通函数
+       
+       console.log( b.bind(a,1,2) ) // 返回新的函数，但是不立即执行， 酷似call() 
+          b.bind(a,1,2)()
+    </script>
+</body>
+</html>
