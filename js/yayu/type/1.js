@@ -6,4 +6,4 @@ var a ="1" ;// 字符串  类型由值决定
 
 a=Number("1"); // Number
 a=true
-console.log(typeof a)
+console.log(typeof a) // boolean

@@ -4,9 +4,9 @@ console.log(Object.is(5,5))
 console.log(Object.is(+0,-0))
 // 隐式转换
 // NaN Not a Number -> 
-console.log(2*'a',2 + 'a')
+console.log(1*'a',1 + 'a')
 console.log(typeof NaN)
-
+console.log( NaN+5)
 console.log(parseInt('123'))
 console.log(parseInt('aaa'))
 console.log(parseInt('12aaa3'))

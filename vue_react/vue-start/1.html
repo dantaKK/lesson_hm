@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>敲木鱼游戏</title>
+  <!-- 引入 Vue.js 3 -->
+  <script src="https://unpkg.com/vue@next"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .fish-game img {
+      width: 150px;
+      cursor: pointer;
+      transition: transform 0.1s;
+    }
+    .fish-game img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <template id="fish-game-template">
+    <div class="fish-game">
+      <img :src="imageSrc" alt="Wooden Fish" @click="hitFish" />
+      <p>Hits: {{ hits }}</p>
+    </div>
+  </template>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const { createApp, ref } = Vue;
+
+      createApp({
+        template: '#fish-game-template',
+        setup() {
+          // 使用ref定义响应式数据
+          const hits = ref(0);
+          const imageSrc = 'fish.png'; // 确保此路径正确指向你的图片位置
+
+          // 定义方法
+          const hitFish = () => {
+            hits.value += 1; // 每次点击增加一次
+          };
+
+          return {
+            hits,
+            imageSrc,
+            hitFish
+          };
+        }
+      }).mount('#app');
+    });
+  </script>
+</body>
+</html>
