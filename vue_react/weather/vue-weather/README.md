@@ -5,6 +5,8 @@
    - 先写template {{占位数据}}
    - html5 语义化
    - BEM 命名
+
+   
 - BFC 基本概念   块级格式化上下文
    Block Formating Context 
    - 浮动 float 用来实现两（多）列式布局的方案

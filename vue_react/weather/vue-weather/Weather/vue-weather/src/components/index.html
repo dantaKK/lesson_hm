@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC</title>
+<style>
+    .father{
+        overflow: auto;
+        padding: 20px;
+    }
+    .son1{
+        float: left;
+    }
+    .son2{
+        float: right;
+    }
+</style>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">我是大儿子</div>
+        <div class="son2">我是二儿子</div>
+        <div class="son3">我是三儿子</div>
+    </div>
+    <div>我是后面的跟屁虫</div>
+</body>
+</html>

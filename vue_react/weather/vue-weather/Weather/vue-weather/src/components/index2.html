@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Preventing Float Interference with BFC</title>
+<style>
+    .container {
+        border: 2px solid #333;
+        padding: 10px;
+        /* 创建新的BFC */
+        overflow: hidden; 
+    }
+
+    .floated-box {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: lightblue;
+        margin-right: 10px;
+    }
+
+    .content {
+        background-color: lightcoral;
+        padding: 10px;
+    }
+
+    .next-element {
+        margin-top: 20px;
+        background-color: lightgreen;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="floated-box"></div>
+    <div class="content">
+        这个内容区域会被浮动盒子推挤，但不会被下面的`.next-element`覆盖，因为我们创建了一个新的BFC。
+    </div>
+</div>
+
+<div class="next-element">
+    我是下一个元素，我不应该受到前面浮动元素的影响。
+</div>
+
+</body>
+</html>

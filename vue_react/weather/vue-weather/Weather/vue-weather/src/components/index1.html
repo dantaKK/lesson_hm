@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BFC - Floats</title>
+<style>
+    .container {
+        background: #f0f0f0;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+    .float-box {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: tomato;
+    }
+    .clearfix::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>
+</head>
+<body>
+<div class="container clearfix">
+    <div class="float-box"></div>
+</div>
+    <!-- 浮动元素不会影响到外面的内容 -->
+    <p>这段文字应该正常显示，不受浮动元素影响。</p>
+
+</body>
+</html>
