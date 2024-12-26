@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <ul id="memberList"></ul>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const oUL = document.getElementById('memberList');
+            // 用axios 拉取数据
+            axios.get('https://api.github.com/orgs/lemoncode/members')
+                .then(function (response) {
+                    oUL.innerHTML=response.data.map(member=>`
+    <li>
+        <img src="${member.avatar_url}" alt="${member.login}">
+        <span>${member.login}</span>
+    </li>
+    `).join('')
+                })
+                .catch(function (error) {
+                    console.error('Error:', error); // 处理错误
+                });
+        });
+    </script>
+</body>
+</html>
