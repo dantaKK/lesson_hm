@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxy</title>
+</head>
+<body>
+  <div id="container">1</div>
+  <div id="count">2</div>
+  <button id="button">+1</button>
+  <button id="btn">*2</button>
+  <script>
+    // 使用 IIFE 创建封闭作用域
+    (function() {
+      function watch(target, updateUI) {
+        return new Proxy(target, {
+          get: function(target, prop) {
+            console.log('读了' + prop + '属性');
+            return target[prop];
+          },
+          set: function(target, prop, value) {
+            const oldValue = target[prop];
+            target[prop] = value;
+            if (oldValue !== value && typeof updateUI === 'function') {
+              updateUI(prop, value);
+            }
+            return true; // 返回 true 表示成功设置
+          }
+        });
+      }
+
+      // 定义初始数据对象
+      let obj = { value: 1, count: 2 };
+
+      // 创建一个代理对象并定义统一的 UI 更新逻辑
+      const reactiveObj = watch(obj, function(key, newValue) {
+        document.getElementById(key).innerHTML = newValue;
+      });
+
+      // 绑定事件监听器
+      document.getElementById('button').addEventListener('click', function() {
+        reactiveObj.value++;
+      });
+
+      document.getElementById('btn').addEventListener('click', function() {
+        reactiveObj.count *= 2;
+      });
+    })();
+  </script>
+</body>
+</html>
