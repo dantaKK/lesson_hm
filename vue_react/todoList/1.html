@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,35 @@
     <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
     <script>
        $('#todo-input').val('haha')
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Todo Input Example</title>
+    <!-- 引入 jQuery -->
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h2 id="app"></h2>
+    <input type="text" id="todo-input" placeholder="Enter text here">
+
+    <script>
+        $(document).ready(function() {
+            // 初始化时设置输入框的值（可选）
+            $('#todo-input').val('');  // 清空输入框或设置默认值
+
+            // 监听输入框的变化
+            $('#todo-input').on('input', function() {
+                var val = $(this).val();  // 获取输入框的当前值
+                console.log(val);         // 打印到控制台以供调试
+                $('#app').html(val);      // 更新<h2>标签的内容为输入框的值
+            });
+        });
     </script>
 </body>
 </html>
