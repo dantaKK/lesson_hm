@@ -38,7 +38,6 @@
     },
     set: function(newValue) {
         count = newValue// 原来的职责 数据改变了
-
       document.getElementById('count').innerHTML = newValue;
     }
   })
@@ -48,8 +47,8 @@
     .addEventListener('click', function() {
       obj.value++;
     })
-    document.getElementById('btn').
-    addEventListener('click', function() {
+  document.getElementById('btn')
+  .addEventListener('click', function() {
       obj.count=2*obj.count;
     })
   </script>

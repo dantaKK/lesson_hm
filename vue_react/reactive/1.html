@@ -31,7 +31,10 @@
       }
 
       // 定义初始数据对象
-      let obj = { value: 1, count: 2 };
+      let obj = { 
+        value: 1, 
+        count: 2 
+      };
 
       // 创建一个代理对象并定义统一的 UI 更新逻辑
       const reactiveObj = watch(obj, function(key, newValue) {
