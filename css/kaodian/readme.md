@@ -51,4 +51,34 @@
     - 触发新BFC
       - overflow: hidden||auto... 不为visible
       水杯盛开水 
-      - 
+      
+# 层叠
+- 页面是平面的
+  BFC、文档流、布局、盒模型、选择器、继承、层叠上下文... 为渲染引擎像素(rgb 像素点)计算而服务的 
+  - z-index 越大越在上层 洋葱
+  一层一层计算 叠加起来 (图层的合成)
+  - 层叠上下文是HTML 的三维概念， 发生堆叠 z-index 受父元素的影响，如果父元素小的话，z-index 就没用效果了。
+  - html DOM树 浏览器解析程序的数据结构(树)
+  - css cssOM 树 
+  - DOM树 + cssOM树 = renderTree 渲染树 -> 布局(float,positon,flex) -> 绘制(z-index) -> 合成(图层) -> 渲染引擎画出来。
+  - z-index 太多了，性能不好
+  - 父图层管着子图层 
+
+
+# css 的三种写法
+  - 行内样式 
+    写在标签上的 style 属性上 优先级最高(除了！important ) 行内样式 ！important 不要多用，不好维护 
+    ：style={width:width+'px'} 动态样式用 
+  - 内嵌样式  
+    少用， 不会方便复用和管理 影响页面加载速度(极致优化)
+  - 外联样式
+    好维护， 方便复用，模块化，并发请求，DOM 可以提前解析和 css 结合， 渲染，页面尽早出来(快)
+
+- stylus 
+  css 预编译 
+  浏览器还是只认css， 先写styl，再编译成css 
+  npm i -g stylus 全局安装了 stylus 
+  stylus -w 10.styl -o 10.css 实时编译
+  - 快捷 不用写花括号、、:、;
+  - tab 缩进一下 选择器和规则的归属
+  - stylus 让css 更强大

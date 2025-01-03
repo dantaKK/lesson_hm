@@ -19,6 +19,7 @@ const change=()=>{
 }
 
 </script>
+
 <template>
   <div>
     <button @click="toggleComponent">Toggle Component</button>
