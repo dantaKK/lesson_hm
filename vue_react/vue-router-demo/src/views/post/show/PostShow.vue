@@ -1,6 +1,9 @@
 <template>
     <div>
         <div>PostShow {{postId}}</div>
+    
+        <router-view />
+
     </div>
 </template>
 
