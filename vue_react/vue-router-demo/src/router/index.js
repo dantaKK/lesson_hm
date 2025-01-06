@@ -80,19 +80,19 @@ const router=createRouter({
 
 // 路由守卫
 // 每次路由的切换都会执行这个回调
-router.beforeEach((to,from,next)=>{
-    document.title=to.meta.title || '智能办公'
-  // to 要去的路由
-  // from 离开的路由对象
-  // router +routes 构成路由
-//   console.log(to,from,'-----')
-if(to.meta.requireAuth){
-//   console.log('需要登录')
+// router.beforeEach((to,from,next)=>{
+//     document.title=to.meta.title || '智能办公'
+//   // to 要去的路由
+//   // from 离开的路由对象
+//   // router +routes 构成路由
+// //   console.log(to,from,'-----')
+// // if(to.meta.requireAuth){
+// // //   console.log('需要登录')
 
-// url,redirect 跳转
-  next('/login')
-}
+// // // url,redirect 跳转
+// //   next('/login')
+// // }
  
-})
+// })
 
 export default router

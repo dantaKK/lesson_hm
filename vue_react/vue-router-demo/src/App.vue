@@ -1,5 +1,5 @@
 <script setup>
-const name = "智谱华章" // 数据
+const name = "导航页面" // 数据
 
 </script>
 
