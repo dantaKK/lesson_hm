@@ -13,7 +13,6 @@ const comp = ref(null) // 标记DOM 元素  null 组件没用挂载，DOM 也不
 const title = ref('hello') // 标记数据
 const handlerClick = ()=>{
     console.log(comp,comp.value)
-    console.log(title)
    console.log( comp.value.childName)
    comp.value.someMethod()
 }
