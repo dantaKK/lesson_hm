@@ -11,16 +11,14 @@ function compile(template,data){
 
 const reg=/\{\{(\w+)\}\}/
 
-console.log(template.match(reg))
-console.log(reg.exec(template))
-const key =reg.exec(template)[1]
-let value=data[key]
-console.log(value)  // 张三
-
-// // 正则替换 {{name}} -> value 
-// console.log(template.replace(reg,value))
-// // console.log(reg.exec(template))
-
+while(reg.test(template)){
+    let key = reg.exec(template)[1];      // 第二项是分组匹配的内容
+    let value = data[key];
+    template = template.replace(reg,value);  // 更新
+  }
+  return template;
 
 }
- compile(template,person)
+console.log(compile(template,person))
+
+
