@@ -21,6 +21,7 @@
 - 项目全面使用es6+ 风格
   代码简洁 易读 易维护  
 - 良好的注释
+- 良好的git 提交记录和习惯
 - 按需加载vue 组件库element3，行能优化，页面加载速度
 - 路由
   - 多级路由
@@ -30,4 +31,24 @@
     最佳用户体验是快
     按需加载页面级别组件 函数引入方式 （）=> import('')
   - 路由守卫
+- 表单组件
+  - 看文档 
+  - :model 收集表单数据
+  - ref 获取表单实例 
+    - 有时候 要获取DOM元素， 组件对象 
+    - 调用相应的方法
+    - template 用ref 标记 标记DOM | 组件
+    - const formRef =ref(null)  挂在前就为null
+    - 挂载后就拿到了
+    - valid 方法
+  - 表单的校验
+    - rules
+    - items prop
+    - valid 方法 boolean值
+- 布局组件
+  - ElContainer
+  - ElAsider
+  - ElMain
+  - ElRow
+  - ElCol
     

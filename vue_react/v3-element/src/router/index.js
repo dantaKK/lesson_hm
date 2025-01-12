@@ -48,11 +48,11 @@ const routes = [
 // 路由守卫
 router.beforeEach((to,from,next)=>{
     document.title = to.meta.title || '默认值'
-    if(to.meta.requireLogin)
-   {
-     next('/login')
-     return 
-    }
+  //   if(to.meta.requireLogin)
+  //  {
+  //    next('/login')
+  //    return 
+  //   }
 
     next()
 })
