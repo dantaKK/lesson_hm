@@ -11,12 +11,19 @@
   "dependencies": {
     "pinia": "^2.3.1",
     "vue": "^3.4.37",
-    "vue-router": "^4.5.0"
+    "vue-router": "^4.5.0",
+    "vant":"^4.9.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5.5.3",
     "vite": "^5.4.1",
-    "vue-tsc": "^2.0.29"
+    "vue-tsc": "^2.0.29",
+    "@vant/auto-import-resolver": "^1.2.1",
+    "unplugin-auto-import": "^0.18.2",
+    "unplugin-vue-components": "^0.27.3"
   }
 }
