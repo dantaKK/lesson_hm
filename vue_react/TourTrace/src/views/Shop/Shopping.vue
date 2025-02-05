@@ -59,7 +59,7 @@
   
   <script setup lang="ts">
   import { ref, toRefs } from 'vue';
-  import { useShopStore } from '../../store/shopStore';
+  import { useShopStore } from '@/store/shopStore';
   const shopStore = useShopStore()
   // toRefs 解构出来会丢失相应能力
   const {topBarState,recommendItemState} = toRefs(shopStore)            
