@@ -36,7 +36,8 @@
    - 用户 -> 赚钱 -> AI 
 
 ## DeepSeek AI 全栈应用
-  前端 + 后端 + LLM AI fullstuck
+  前端 + 后端 + LLM = AI fullstuck
+  
 - ai应用集合项目
   coze 工作流 + ai 应用
   deepseek openai 的替代品 prompt
@@ -125,3 +126,4 @@
     单向 + 事件 onChange
 - vue 支持事件修饰符 api 友好
 - react 手写
+
