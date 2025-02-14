@@ -81,7 +81,13 @@
   - css 样式的组合 面向对象特性 多态 方便复用和维护
     tailwindcss 原子类
   - textarea LLM 支持比较多的tokens 出入长度 kimi deepseek
-  - 语义化标签
+  - html5
+    - 语义化标签
+    - 无障碍访问
+      label + for
+    - form 表单增强功能
+      input type[number|range...]
+      placeholder 提示
  - css
   - 弹性布局
     - 居中
@@ -126,8 +132,32 @@
     - navigator.userAgent
     操作系统 浏览器版本 内核
     - navigator.cilpboard
-
-
+    - localStorage
+      - 本地存储 5M 4096kb cookie kb 带上
+      - getIterm(null) null
+      - setItem
+    - array,string 方法强化一下
+    - slice 负数
+    - event 事件机制
+      - dom level 和 event 两个概念 dom level 涉及和event 相关的定义
+      - onclick(内嵌DOM 0 level 0) addEventListener(事件监听 DOM 2)
+      - 小红书(js高级程序设计)
+      - 事件冒泡 | 捕获
+      - 事件委托
+        事件监听 内存开销比较大的
+        - 利用冒泡机制 父元素上 监听一次 性能好 事件的委托
+        - event.target 目标元素 data-index 数据属性
+        
+  产品需求
+    - 产品经理提出产品需求
+    - 设计师 界面设计
+    - 前端 vue/react 完成需求
+    - 后端 数据和mvc 完成需求
+       - 分析
+       - 技术设计
+       - 代码实现
+       - debug
+       - 交付上线
   - 代码开发风格
     - 注释
     - 封装
@@ -144,4 +174,5 @@
    - 发消息业务
    - 流式输出
    - 剪贴版功能
-     
+   - 聊天历史分组功能
+     - localStorage chatLog
