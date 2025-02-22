@@ -20,23 +20,24 @@ import { useRoute } from "vue-router";
 
 
 const active = ref<number>(0);
-// onMounted(()=>{
-//   const route = useRoute();
-//   console.log(route.fullPath);
-//   if(route.fullPath == "/home"){
-//     active.value = 1; 
-//   }
-//   else if(route.fullPath == "/video"){
-//     active.value = 2; 
-//   }
-//   else if(route.fullPath == "/information"){
-//     active.value = 3;
-//   }
-//   else if(route.fullPath == "/my"){
-//     active.value = 4; 
-//   }
-
-// })
+  onMounted(() => {
+  const route = useRoute();
+  console.log(route.fullPath);
+  switch (route.fullPath) {
+    case "/home":
+      active.value = 0;
+      break;
+    case "/video":
+      active.value = 1;
+      break;
+    case "/information":
+      active.value = 2;
+      break;
+    case "/my":
+      active.value = 3;
+      break;
+  }
+});
 export default {
   setup() {
     return {
