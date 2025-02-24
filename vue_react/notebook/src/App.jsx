@@ -1,11 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState} from 'react'
 // 前后端分离 前端独立的路由功能
 import {
   // HashRouter as Router, 
   // es6 模块化语法
   // BrowserRouter as Router, // hash #, history /
   Routes,
-  Route
+  Route,
+  useLocation,
+
 } from 'react-router-dom'
 import routes from '@/router'
 import { ConfigProvider } from 'zarm';
@@ -13,7 +15,17 @@ import { ConfigProvider } from 'zarm';
 import NavBar from './components/NavBar';
 import s from './App.module.less'
 export default function App() {
-  
+   
+  const [showNav,setshowNav] = useState(false)
+  const needNav=['/','/data',"/user"]
+  const {pathname} = useLocation();
+  // console.log(location)
+  // 当url 切换为/user 的时候 showNav false
+  useEffect(()=>{
+    // 当前路径  -> 是否在needNav中 -> setshowNav
+    setshowNav(needNav.includes(pathname))
+  },[pathname])
+
   return (
 
       <ConfigProvider primaryColor='#007fff'>
@@ -22,7 +34,7 @@ export default function App() {
               { routes.map(route => <Route key={route.path} path={route.path} element={<route.component />}/>)}
             </Routes>
            
-            <NavBar showNav={true} />
+            <NavBar showNav={showNav} />
       </div>
       </ConfigProvider>
      

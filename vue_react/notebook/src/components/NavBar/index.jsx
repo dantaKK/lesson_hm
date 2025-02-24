@@ -4,7 +4,7 @@ import { TabBar } from 'zarm';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import CustomIcon from '@/components/CustomIcon';
-
+import s from "./style.module.less"
 const NavBar = ({ showNav }) => {
   const [activeKey, setActiveKey] = useState('/');
   const navigateTo = useNavigate()
@@ -15,7 +15,7 @@ const NavBar = ({ showNav }) => {
   }
 
   return (
-    <TabBar visible={showNav.toString()} activeKey={activeKey} onChange={changeTab}>
+    <TabBar className={s.tab} visible={showNav} activeKey={activeKey} onChange={changeTab}>
       <TabBar.Item
         itemKey="/"
         title="账单"

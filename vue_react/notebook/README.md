@@ -107,6 +107,25 @@
   - change setActiveKey
   - icon 
     - iconfont 定制
+  - showNavBar 
+    - 默认是false,路由切换showNavBar true
+    - 伪代码 当业务复杂或不太熟悉时可用 useLocation 拿到当前的路由，解构出路径 pathname
+    - useEffect 监听 路由变化
+- react hooks ?
+  - useState 响应式
+  - useEffect 生命周期 副作用
+    - memo 缓存组件
+  - useMemo 缓存计算结果
+  - useCallback 缓存函数
+  - useContext 跨组件通信
+  - react-router-dom useNavigate useLocation
+  - 函数式编程思想 use hooks 很方便的作用
+- react-router-dom
+  BrowserRouter HashRouter
+  Router Routes Route 组件
+  useNavigate useLocation 属于路由， 路由改变 更新
+  useEffect 依赖 观察路由变化
+
 - CustomIcon 的组件
   Icon.createFromIconfont
   
@@ -128,4 +147,67 @@
   - 函数组件对象 propTypes 属性
   - PropTypes.bool
 
-- 
+- css
+  - react module css
+  - less
+    嵌套
+    &
+    :global 
+  - iconfont 性能优化
+  - line-gradient 线性渐变 代替图片 性能更好
+  - pxtorem 
+  - 
+- 功能需求分析
+  - 登录、注册切换功能
+   - 切换下面的表单 useState type login/register
+   - onClick 切换 type 
+   - type active 
+   - useEffect + useLocation  url / logi /register  
+
+
+- 项目用了哪些包？
+  - classnames 动态类名的逻辑安排
+  
+- 记账产品
+ - 账单首页
+  - 时间和类型 查询
+  - 账单列表
+- 可视化账单 数据
+  echarts 图标展示
+- CRUD 用户 账单
+ - jwt
+ - 跨域
+ - 文件上传
+- 我的
+
+## 用户页面的静态开发
+ - 行内样式
+ {{"":""}}
+ - nth-of-type 会根据元素的类型进行计数
+ - align-slef baseline 主轴是纵向的， 对其子元素的宽度
+
+ - react 和 vue slot 和 props.children 区别
+   - 以modal 组件为例的 通用组件 万达 负责招商
+   - 需要强大的定制性 入驻
+     title footer props string | JSX 传入  
+   - content 表单 | JSX .... slot (插槽，具名插槽)
+## AI 特性
+   - prompt 提效的模版
+   假如你是前端工程师 使用react + javascript 技术栈， 请根据上图分析功能模块和交互细节 给出要开发的功能点， 难点 和预计需要的开发时间。 只需要开发前端， 后端不需要考虑。
+
+## 首页 静态开发
+- 先想清楚、再动手 ai
+  了解需求的prompt 模板
+  
+- 用户的账单列表
+  - 所有，按时间排序 倒序 分页
+  - 按类型查询(支出 | 收入)
+  - 按月份查询
+- 整个页面的统计 响应式
+- 按日期分组
+  列表 细节 并进行支出和收入的统计
+- 交互
+   - 类型的弹出
+   - 日期的弹出
+   - 新增支出的弹出
+- 开发时间
