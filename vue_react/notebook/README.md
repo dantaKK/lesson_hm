@@ -239,3 +239,39 @@
 - utils 
   - 封装公用的js 函数 或配置
   
+
+# notebook 后端api 服务
+
+## egg.js 阿里的开源框架
+- koa 极简 
+  - middlewares 中间件 函数 洋葱模型
+  - http listen
+  - ctx
+- 企业级开发 中大型项目
+  MVC
+  npm init egg--type=simple
+  后台开发的模板 
+  - app 目录应用开发的主目录
+  - 约定大于一切
+   - router.js 后端路由
+
+   -  URL 的构成
+   querystring 
+   http://localhost:3000/user?id=1
+   params
+   http://localhost:3000/user/1
+
+- csrf 攻击
+  - 拦截 ?
+    apifox  不是用户
+    userAgent 
+   
+- post 请求体的格式
+  - form-data 有附件
+  - x-www-form-urlencoded 简单键值对 key->value
+  - json   复杂数据结构 
+- get/post 区别 
+  
+
+  
+  
