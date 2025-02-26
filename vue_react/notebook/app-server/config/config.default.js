@@ -23,6 +23,22 @@ module.exports = appInfo => {
      },
      domainWhiteList:['*']
    }
+
+   // 
+   exports.sequelize={
+     dialog:'mysql',
+     host:'localhost',
+     port:'3306',
+     database:'zhangben',
+     username:'root',
+     password:'xck167943',
+     define:{
+       timestamps:false, // 关闭时间戳
+       freezeTableName:true, // 关闭复数
+       underscored:true // 开启下划线
+     }
+     
+    }
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',
