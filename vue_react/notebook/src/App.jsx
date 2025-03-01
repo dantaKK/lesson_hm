@@ -14,6 +14,9 @@ import { ConfigProvider } from 'zarm';
 // import 'zarm/dist/zarm.css'; // vite-plugin-style-import 自动引入css
 import NavBar from './components/NavBar';
 import s from './App.module.less'
+import { uploadAvatar } from './api';
+
+
 export default function App() {
    
   const [showNav,setshowNav] = useState(false)
@@ -25,7 +28,12 @@ export default function App() {
     // 当前路径  -> 是否在needNav中 -> setshowNav
     setshowNav(needNav.includes(pathname))
   },[pathname])
-
+  useEffect(()=>{
+    (async()=>{
+      await uploadAvatar()
+  }
+    )()
+  },[])
   return (
 
       <ConfigProvider primaryColor='#007fff'>

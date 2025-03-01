@@ -15,6 +15,7 @@ import React, {
   import s from './style.module.less'
   import cx from 'classnames';
   import CustomIcon from '@/components/CustomIcon';
+  import {login} from '@/api'
   
   const Login = () => {
     const [type, setType] = useState('login');
@@ -25,8 +26,25 @@ import React, {
       document.title = '登录'
     }, [])
 
-     const onSubmit = () => {
-       
+     const onSubmit = async() => {
+       if(!username){
+        Toast.show('请输入账号')
+        return;
+       }
+       if(!password){
+        Toast.show('请输入密码')
+        return; 
+       }
+       try{
+         if(type=='login'){
+          const {data}=await login(username,password);
+          console.log(data)
+          localStorage.setItem('token',data.token)
+          
+         }       
+       }catch(e){
+        Toast.show('登录失败')
+       }
      }
     return (
       <div className={s.auth}>

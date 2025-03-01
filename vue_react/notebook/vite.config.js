@@ -30,11 +30,12 @@ export default defineConfig({
   server:{
     // 代理解决跨域问题
      proxy:{
-      '/api':{
-                target:'http://localhost:3000/api/',
+      '/api':{   
+                target:'http://localhost:7001/',
                 changeOrigin:true,
                 rewrite:(path)=>path.replace(/^\/api/,'')
               }
-          }
+     
         }
+  }
 })
