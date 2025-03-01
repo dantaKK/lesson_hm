@@ -12,10 +12,25 @@ class UserService extends Service {
         }
       })
       return result
-    } catch(err) {
+    } 
+    catch(err) {
       console.log(err)
       return null
     }
+  }
+  async register(user) {
+    const { ctx } = this
+    try {
+      // orm 
+      // sequelize 
+    const result = await ctx.model.User.create(user)
+    return result
+    }catch(err){
+      console.log(err)
+      return null;
+    }
+
+    
   }
 }
 
