@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串截断</title>
+    <style>
+        /* 单行,overflow hidden  */
+        .truncate {
+            width: 200px; /* 设置容器宽度 */
+            white-space: nowrap;/* 空白符 防止文本换行*/
+            overflow: hidden; /*隐藏溢出的内容*/
+            text-overflow: ellipsis; /*用省略号显示溢出的内容*/
+        }
+    </style>
+</head>
+<body>
+    <div class="truncate">
+        <!-- 原有的文本内容 -->
+        这是一个很长的文本事例,他将被截断并用省略号显示
+    </div>
+</body>
+</html>
