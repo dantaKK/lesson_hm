@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="nav">
+      <ul>
+        <li><a href="#/page1">page1</a></li>
+        <li><a href="#/page2">page2</a></li>
+        <li><a href="#/page3">page3</a></li>
+      </ul>
+    </nav>
+    <main>
+        <div id="continter"></div>
+    </main>
+    <footer>
+
+    </footer>
+    <script>
+        class HashRouter{
+            constructor(){
+            // 路由配置
+            this.routes={};
+            // this 丢失 bind 事件处理函数需要的是函数  应用场景手写路由 提到bind call
+            window.addEventListener('hashchange',this.load.bind(this),false);
+            }
+            // 模块化
+            load(){
+            //  console.log(this);
+            // BOM 对象
+            let hash = window.location.hash.slice(1);
+            console.log(hash);
+            }
+        }
+
+        // api 使用者 -> 了解底层 -> 库的开发者
+        // vue-router ? 封装 暴露好用的路由配置接口
+
+
+        // window.addEventListener('hashchange',function(e){
+        //     console.log(e,'///');
+        // })
+        new HashRouter();
+    </script>
+</body>
+</html>

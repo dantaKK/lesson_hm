@@ -15,10 +15,18 @@ app.use(async (ctx,next)=>{
         <input type="text" id="messageInput" />
         <button onclick="sendMessage()">发送</button>
         <script>
+        // html5 新特性 利用websocket 协议可以和服务器建立连接
         const ws = new WebSocket('ws://localhost:3001');
+        ws.onmessage=function (event) {
+        // console.log(event);
+        const messages=document.getElementById('messages');
+        messages.innerHTML+="<div>"+event.data+'<br/>';
+
+        }
         function sendMessage() {
            const  msg=document.getElementById('messageInput').value.trim();
            console.log(msg);
+           ws.send(msg);
         }
 
         </script>
@@ -32,6 +40,19 @@ app.use(async (ctx,next)=>{
 app.ws.use(async (ctx,next)=>{
    clients.add(ctx.websocket);
    console.log('-------')
+   // 事件监听？
+   ctx.websocket.on('message',(message)=>{
+      // console.log(message,"-----",ctx.websocket)
+      for(const client of clients){
+        client.send(message.toString()); // 服务器广播给所有的用户
+      }
+     
+
+   })
+   ctx.websocket.on('close',()=>{
+    console.log('关闭了',ctx.websocket.socketid)
+      clients.delete(ctx.websocket);
+   })
 })
 // http 伺服
 app.listen(3001,()=>{
