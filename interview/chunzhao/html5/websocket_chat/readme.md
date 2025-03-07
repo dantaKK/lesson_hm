@@ -9,6 +9,7 @@
 
 - http 协议 和 websocket 协议 区别 ??
   - http 协议是无状态的(独立的，url，返回一致，cookie authorization)，websocket 协议是有状态的(socket 连接 分配一个socket id)
+  (在标准的 WebSocket API 中，并没有直接提供一个叫做 socketID 的属性。不过，在某些 WebSocket 库或框架中（如 Socket.IO），每个连接通常会有一个唯一的标识符（例如 socket.id），用于区分不同的连接。)
   - http 是单向的，websocket 协议是双向的
     http cilent -> request -> server -> response -> cilent 
     http server 不可以主动向client 发送消息 

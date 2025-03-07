@@ -43,6 +43,10 @@ app.ws.use(async (ctx,next)=>{
    // 事件监听？
    ctx.websocket.on('message',(message)=>{
       // console.log(message,"-----",ctx.websocket)
+      if (message.toString() === 'close') {
+        console.log('关闭了',ctx.websocket.socketid) 
+        ctx.websocket.close();
+    }
       for(const client of clients){
         client.send(message.toString()); // 服务器广播给所有的用户
       }
@@ -50,7 +54,7 @@ app.ws.use(async (ctx,next)=>{
 
    })
    ctx.websocket.on('close',()=>{
-    console.log('关闭了',ctx.websocket.socketid)
+   
       clients.delete(ctx.websocket);
    })
 })
