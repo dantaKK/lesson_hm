@@ -18,4 +18,6 @@
     http://127.0.0.1:5500/lesson_hm/interview/chunzhao/js/source_code/router/1.html#first
 
     http://127.0.0.1:5500/lesson_hm/interview/chunzhao/js/source_code/router/1.html#four
-    
+    **缺点** 不美观 不像后端路由
+
+- historyRouter 和后端路由 看上去一致
