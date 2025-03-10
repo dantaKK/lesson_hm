@@ -382,4 +382,12 @@
     - 路由
     - userinfo 组件
     - api editUserInfo
-
+- bill CRUD
+  - sql 建表
+  - mvc 
+    - model
+      使用AI 生成 prompt 基于sql,使用egg.js sequelize 生成 module定义
+    - controller
+    - service
+    - router
+    - 

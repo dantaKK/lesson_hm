@@ -21,4 +21,9 @@ module.exports = app => {
   // 部分修改资源 put 完全替换（文件）   patch 部分
   router.patch('/user/signature', _jwt, controller.user.editSignature)
   router.get('/user/getUserInfo', _jwt, controller.user.getUserInfo)
+
+  // 账单模块 restful 
+  router.post('/bill', _jwt, controller.bill.add)
+
+
 };
