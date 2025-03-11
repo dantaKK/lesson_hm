@@ -39,6 +39,22 @@ class BillService extends Service {
   async delete(id,user_id) {
    
   }
+  async detail(id){
+    const {app} = this;
+    try {
+      // orm sequelize 
+      const result = await app.model.Bill.findOne({
+        where:{
+          id
+        }
+      })
+      // console.log(result.dataValues,"----")
+      return result.dataValues;
+    } catch (error) {
+      console.log(error)
+      return null;
+    }
+  }
 
 }
 module.exports = BillService;

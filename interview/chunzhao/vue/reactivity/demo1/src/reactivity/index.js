@@ -2,6 +2,8 @@
 // 了解底层
 // 优质的编码风格
 
+// 清单
 export {
     reactive
 } from './reactive'
+export {effect} from './effect'
