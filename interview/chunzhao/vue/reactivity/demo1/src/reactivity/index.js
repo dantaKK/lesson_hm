@@ -4,6 +4,8 @@
 
 // 清单
 export {
-    reactive
+    reactive,
+    shallowReactive,
 } from './reactive'
 export {effect} from './effect'
+export {ref} from './ref'

@@ -8,7 +8,6 @@ export const post=axios.post
 export const getUserInfo= async()=>{
   return await get('/userInfo')
 }
-
 export const typeMap = {
   1: {
     icon: 'canyin'
@@ -58,4 +57,5 @@ export const typeMap = {
   16: {
     icon: 'qita'
   }
+
 }
