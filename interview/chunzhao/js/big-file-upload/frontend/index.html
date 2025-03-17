@@ -43,7 +43,9 @@
       )
       cur += size;
     }
+     console.log(chunkList);
   }
+  
 
   upload.addEventListener('click', function () {
     const uploadList = chunkList.map(({file:blobFile}, index) => {
