@@ -47,7 +47,7 @@ patches 补丁[]
   ABCDE EABCD  
   A E type 不一样
   不能判断type, 如果有唯一的key 来判断 
-  列表里面有移动操作
+  列表里面有移动操作 
   key O(n)
 
 - 新的 vnode 数组中记录的顺序就是，目标的顺序，所有对应的节点按照新vode 数组的顺序来移动就好了，
