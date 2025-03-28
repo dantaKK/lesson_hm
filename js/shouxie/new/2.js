@@ -23,3 +23,12 @@ function objectFactory(){
 
 let awei=objectFactory(Person,"awei",18)
 awei.sayName()
+
+
+function mynews(Constructor,...args){
+    if(typeof Constructor !=='function')
+        throw new TypeError('c')
+    const obj = Object.create(Constructor.prototype)
+    const ret = Constructor.apply(obj,args);
+    return 
+}

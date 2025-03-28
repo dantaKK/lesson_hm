@@ -1,20 +1,21 @@
-import { useState } from 'react'
-
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom'
-import Home from '@/pages/Home'
-import Search from '@/pages/Search'
-
-function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path='/search' element={<Search/>}></Route>
-      </Routes>
-    </Router>
-  )
+import Mock from 'mockjs'
+import { useRequest } from 'ahooks'
+function getUsername():Promise<string> {
+    return new Promise((resolve)=>{
+        setTimeout(()=>{
+          resolve(Mock.mock('@name'))  
+        },1000)
+    })
 }
 
-export default App
+const App = () => {
+    const {data,loading,error}=useRequest(getUsername)
+return (
+  <div>
+   {loading&&<div>loading...</div>}
+   {data&&<div>Username:{data}</div>}
+  </div>
+
+)
+}
+export default App;

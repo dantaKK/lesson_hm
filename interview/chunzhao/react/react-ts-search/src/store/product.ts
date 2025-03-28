@@ -3,11 +3,10 @@ import type {Product} from "@/types/product"
 
 interface ProductStore {
     products: Product[];
-    setProdects: (products:Product[])=>void;
-
+    setProducts: (products:Product[])=>void;
 }
 
 export const useProductStore = create<ProductStore>((set)=>({
    products:[],
-   setProdects:(products:Product[])=>set({products})
+   setProducts:(products:Product[])=>set({products})
 }));
