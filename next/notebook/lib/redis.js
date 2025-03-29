@@ -1,4 +1,5 @@
 import Redis from "ioredis"; // redis node js client
+import {v4 as uuidv4} from "uuid" // 唯一值
 
 const redis = new Redis()
 
@@ -24,4 +25,22 @@ const initialData = {
 
 
 
+// add
+export async function addNote(data){
+  // 唯一值
+  // const uuid = Date.now().toString(); 并发的风险
+  const uuid = uuidv4();
+  await redis.hset("notes",[uuid],data)
+}
 
+export async function getNote(uuid){
+  return JSON.parse(await redis.hget("notes",uuid))
+}
+
+export async function delNote(uuid){
+  return redis.hdel("notes",uuid) 
+}
+
+export async function updateNote(uuid,data){
+  await redis.hset("notes",[uuid],data)
+}
