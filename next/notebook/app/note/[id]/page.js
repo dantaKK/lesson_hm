@@ -1,5 +1,5 @@
 // /note/123/
-import Note from '@/components/Note'
+import Note from '@/components/note/Note'
 import { getNote } from '@/lib/redis'
 
 export default async function Page({ params }) {

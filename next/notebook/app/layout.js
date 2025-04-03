@@ -1,4 +1,4 @@
-import Sidebar from "@/components/Sidebar";
+import Sidebar from "@/components/sidebar/Sidebar";
 import './style.css'
 // async 作用是 异步请求数据
 export default async function RootLayout({
