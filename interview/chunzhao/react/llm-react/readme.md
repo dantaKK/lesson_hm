@@ -34,3 +34,10 @@
     postMessage
     onmessage
   -  
+## progess stateless 组件设计
+
+## LLM 加载
+单例模式
+  - tokenizer model 下载
+  - initialize download progress done
+## 设计下progess 需要的响应式数据
