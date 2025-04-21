@@ -32,3 +32,24 @@ const num1 = "123456789012345678901234567890";
 const num2 = "987654321098765432109876543210";
 const sum = addLargeNumbers(num1, num2);
 console.log(sum); // 输出: "1111111110111111111011111111100"
+
+function addx(x,y){
+  let i=x.length-1;
+  let j=y.length-1;
+  let jinwei=0;
+  let ans=''
+  while(i>=0||j>=0||jinwei>0){
+     let sum1=i>=0 ?parseInt(x[i]):0
+     let sum2=j>=0?parseInt(y[j]):0
+     let sum=sum1+sum2+jinwei;
+     jinwei=Math.floor(sum/10);
+      ans=sum%10+ans;
+     i--;
+     j--;
+
+
+  }
+   return ans;
+}
+
+console.log(addx(num1,num2))

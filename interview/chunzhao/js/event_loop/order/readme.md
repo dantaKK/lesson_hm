@@ -4,7 +4,7 @@ JavaScript 的事件循环（event loop）是一种机制，它负责执行异�
 
 - 事件
    - 宏任务
-     setTimeout setInterval I/O setImmediate 队列 FIFO
+     script setTimeout setInterval requstAnimation setImmediate I/O setImmediate 队列 FIFO
    - 微任务
      promise 队列 FIFO
 - 循环
@@ -19,3 +19,7 @@ JavaScript 的事件循环（event loop）是一种机制，它负责执行异�
 - 执行栈要先清空(同步)
 - promise 的excute 是同步代码 立即执行
 - then 会放入微任务
+
+- 非阻塞式 不会被耗时性任务阻塞，遇到耗时性任务会放到宏任务队列中，等待执行栈清空后再执行，等“通知”
+微任务相当于插队宏任务，紧急的插入
+每一个宏任务都有一个自己的微任务队列
