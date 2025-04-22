@@ -37,3 +37,6 @@ HttpOnly 标志：当设置一个cookie时，如果加上了HttpOnly属性，那
 2. httponly xss JS 无法访问cookie
 3. Expires/MAX-age 过期时间
 4. Domain 哪些域名跨域访问cookie
+
+##  如果localstorage满了，再往里放会怎么样?
+当浏览器的 localStorage 存储空间已满，再尝试往里面存储新的数据时，将会抛出一个 QuotaExceededError 异常。
