@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-left">固定宽度 200px</div>
+        <div class="flex-right">自由宽度</div>
+      </div>
+</body>
+
+<style>
+ .container {
+  display: grid;
+  grid-template-columns: 200px 1fr ; /* 左侧 200px，右侧 1fr 占剩余空间 */
+  height: 100vh;
+}
+
+.fixed-left {
+  background: #eee;
+}
+
+.flex-right {
+  background: #ffd;
+}
+</style>
+</html>

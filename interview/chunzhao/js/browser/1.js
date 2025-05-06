@@ -19,3 +19,16 @@ function lazyload() {
     }
   }
 }
+
+function A(){
+  this.x=0
+  return this;}
+A.prototype.y=0;
+const m = new A();
+console.log(m.y);
+m.y=2;
+const n = new A(); 
+console.log(n.y);
+delete n.y;console.log(m.y);
+console.log(n.y);
+delete m.y;console.log(m.y)

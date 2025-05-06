@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-left">固定宽度 200px</div>
+        <div class="free-right">自由宽度</div>
+      </div>
+</body>
+<style>
+    .container {
+  position: relative; /* 为子元素绝对定位提供参照 */
+  height: 100vh;
+}
+
+.fixed-left {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: #eee;
+}
+
+.free-right {
+  margin-left: 200px; /* 通过 margin 腾出空间 */
+  height: 100%;
+  background: #ffd;
+}
+</style>
+</html>

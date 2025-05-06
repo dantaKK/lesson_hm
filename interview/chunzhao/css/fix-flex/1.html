@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-left">固定宽度 200px</div>
+        <div class="flex-right">自由宽度</div>
+      </div>
+</body>
+
+<style>
+    .container {
+  display: flex;
+  height: 100%;
+}
+
+.fixed-left {
+  width: 200px; /* 固定宽度 */
+  background: #eee;
+}
+
+.flex-right {
+  flex: 1; /* 占据剩余空间 */
+  background: #ffd;
+}
+</style>
+</html>

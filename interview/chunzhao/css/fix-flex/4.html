@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="fixed-left">固定宽度 200px</div>
+        <div class="free-right">自由宽度</div>
+      </div>
+
+      <style>
+
+.fixed-left {
+  float: left;
+  width: 200px;
+  height: 100vh;
+  background: #eee;
+}
+
+.free-right {
+  margin-left: 200px; /* 避免与浮动元素重叠 */
+  height: 100vh;
+  background: #ffd;
+}
+      </style>
+</body>
+</html>

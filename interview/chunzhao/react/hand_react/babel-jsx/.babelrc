@@ -1,0 +1,12 @@
+{
+    // 预处理
+    "presets": [
+        [
+        "@babel/preset-react",{
+            "pragma":"Didact.createElement",
+            "pragmaFrag":"Didact.Fragment",
+            
+        }
+        ]
+    ]
+}
